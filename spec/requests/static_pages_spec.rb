@@ -30,9 +30,14 @@ describe "Static pages" do
       expect(page).to have_content('Help')
     end
 
-    it "should have the right title" do
+    it "должна иметь правильный заголовок" do
       visit '/static_pages/help'
-      expect(page).to have_title("#{baseTitle} | Help")
+      expect(page).to have_title("#{baseTitle}")
+    end
+
+    it "не должна иметь в базовом заголовке Help" do
+      visit '/static_pages/help'
+      expect(page).not_to have_title("| Help")
     end
   end
 
@@ -43,9 +48,14 @@ describe "Static pages" do
       expect(page).to have_content('About Us')
     end
 
-    it "should have the right title" do
+    it "должна иметь правильный заголовок" do
       visit '/static_pages/about'
-      expect(page).to have_title("#{baseTitle} | About Us")
+      expect(page).to have_title("#{baseTitle}")
+    end
+
+    it "не должна иметь в базовом заголовке About Us" do
+      visit '/static_pages/about'
+      expect(page).not_to have_title("| About Us")
     end
   end
 
@@ -55,9 +65,14 @@ describe "Static pages" do
       expect(page).to have_content('Contact')
     end
 
-    it "should have the right title" do
+    it "должна иметь правильный заголовок" do
       visit '/static_pages/contact'
-      expect(page).to have_title("#{baseTitle} | Contact")
+      expect(page).to have_title("#{baseTitle}")
+    end
+
+    it "не должна иметь в базовом заголовке Contact" do
+      visit '/static_pages/contact'
+      expect(page).not_to have_title("| Contact")
     end
   end
 
