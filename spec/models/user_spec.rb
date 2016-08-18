@@ -3,7 +3,7 @@ require 'rails_helper'
 ActiveRecord::Migration.maintain_test_schema!
 
 describe User do
-
+  #тесты для проверки валидности пользовательских данных
   before { @user = User.new(name: "Example User", email: "user@example.com") }
 
   subject { @user }
